@@ -12,6 +12,23 @@ CREATE TABLE clientes(
     telefono VARCHAR(10)
 );
 
+INSERT INTO
+    clientes(
+        nombre,
+        ap_paterno,
+        ap_materno,
+        fecha_nacimiento,
+        correo_electronico,
+        telefono
+    ) VALUE (
+        'Juan',
+        'Perez',
+        'Lopez',
+        '1990-05-04',
+        'juan@gmail.com',
+        '1234567890'
+    );
+    
 CREATE TABLE correspondencias(
     id_correspondencia INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT,
