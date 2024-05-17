@@ -17,11 +17,5 @@ VALUE ('$nombre','$ap_paterno','$ap_materno','$fecha_nacimiento','$correo_electr
 
 $insert = $conexion->query($query);
 
-if ($insert) {
-    echo "Inserción exitosa";
-} else {
-    echo "Inserción fallida";
-}
-
-
+header('Location: ./index.php');
 ?>
