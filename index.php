@@ -104,7 +104,7 @@
 										<td>{$fila['correo_electronico']}</td>
 										<td>{$fila['telefono']}</td>
 										<td>
-											<a class='btn btn-warning btn-sm'>Editar</a>
+											<a href='edit.php?id_cliente={$fila['id_cliente']}' class='btn btn-warning btn-sm'>Editar</a>
 											<a href='delete.php?id_cliente={$fila['id_cliente']}' class='btn btn-danger btn-sm'>Eliminar</a>
 										</td>
 									</tr>

@@ -12,6 +12,9 @@ CREATE TABLE clientes(
     telefono VARCHAR(10)
 );
 
+CREATE INDEX idx_correo_electronico ON clientes(correo_electronico);
+
+CREATE INDEX idx_telefono ON clientes(telefono);
 INSERT INTO
     clientes(
         nombre,
@@ -38,10 +41,4 @@ CREATE TABLE correspondencias(
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
-http://localhost/sm35_2024/?
-nombre=dfgh
-&ap_paterno=fgh
-&ap_materno=fgh
-&fecha_nacimiento=2024-05-04
-&correo_electronico=dfghj%40gmail.com
-&telefono=1234567890
+CREATE INDEX idx_id_cliente ON correspondencias(id_cliente)
