@@ -1,5 +1,5 @@
 <?php
-print_r($_GET);
+//print_r($_GET);
 
 $id_cliente = $_GET['id_cliente'];
 
@@ -36,7 +36,7 @@ $fila = $resultado->fetch_assoc();
             <div class="row justify-content-center">
                 <div class="col-md-4 form-container">
                     <h4>Formulario</h4>
-                    <form action="./insert.php" method="post">
+                    <form action="./update.php" method="post">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" value="<?= $fila['nombre']; ?>" id="nombre" name="nombre" required>
@@ -47,20 +47,21 @@ $fila = $resultado->fetch_assoc();
                         </div>
                         <div class="form-group">
                             <label for="ap_materno">Apellido Materno</label>
-                            <input type="text" class="form-control" id="ap_materno" name="ap_materno" required>
+                            <input type="text" class="form-control" id="ap_materno" value="<?= $fila['ap_materno']; ?>" name="ap_materno" required>
                         </div>
                         <div class="form-group">
                             <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                            <input type="date" class="form-control" id="fecha_nacimiento" value="<?= $fila['fecha_nacimiento']; ?>" name="fecha_nacimiento" required>
                         </div>
                         <div class="form-group">
                             <label for="correo_electronico">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" required>
+                            <input type="email" class="form-control" id="correo_electronico" value="<?= $fila['correo_electronico']; ?>" name="correo_electronico" required>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            <input type="tel" class="form-control" id="telefono" value="<?= $fila['telefono']; ?>" name="telefono" required>
                         </div>
+                        <input type="hidden" name="id_cliente" value="<?= $fila['id_cliente']; ?>">
                         <button type="submit" class="btn btn-primary btn-block mt-3">Enviar</button>
                     </form>
                 </div>

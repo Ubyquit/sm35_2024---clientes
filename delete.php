@@ -5,7 +5,7 @@ include './conexion/conexion.php';
 
 $id_cliente = $_GET['id_cliente'];
 
-$query = "DELETE FROM clientes WHERE id_cliente = $id_cliente";
+$query = "CALL sp_eliminar_cliente('$id_cliente')";
 
 $delete = $conexion->query($query);
 
