@@ -5,7 +5,7 @@ $id_cliente = $_GET['id_cliente'];
 
 include './conexion/conexion.php';
 
-$query = "SELECT * FROM clientes WHERE id_cliente = '$id_cliente'";
+$query = "CALL sp_buscar_cliente_id('$id_cliente')";
 
 $resultado = $conexion->query($query);
 
