@@ -1,0 +1,29 @@
+.centered-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body {
+    background-color:aliceblue;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+.align-bottom-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.align-bottom-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+a {
+    text-decoration: none;
+}
