@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+if(!isset($_SESSION['id'])){
+    header("Location: ../../index.html");
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -10,6 +20,15 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <style>
+        body {
+            background-image: url('../../assets/img/4854835.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +36,7 @@
         <!-- place navbar here -->
     </header>
     <main class="container full-height d-flex flex-column justify-content-center">
-        <h1 class="text-center mb-5">Bienvenido a tu cajero: Luis Villafaña</h1>
+        <h1 class="text-secondary-emphasis text-center mb-5 pt-5">Bienvenido a tu cajero Luis Villafaña</h1>
         <div class="row flex-grow-1">
             <div class="col-6 align-bottom-right">
                 <a href="../saldo/index.php">
@@ -36,7 +55,7 @@
                 </a>
             </div>
             <div class="col-6 align-bottom-left">
-            <a href="../../index.html">
+            <a href="../../connection/logout.php">
                 <div class="card pt-4 pb-4 border-0 rounded-0 shadow mb-3 bg-body-tertiary">
                     <div class="card-body text-center">
                         <h1 class="card-title">Salir</h1>

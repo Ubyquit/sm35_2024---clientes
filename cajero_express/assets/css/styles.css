@@ -6,7 +6,12 @@
 }
 
 body {
-    background-color:aliceblue;
+    background-image: url('../img/backgound.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
 }
 
 .full-height {
