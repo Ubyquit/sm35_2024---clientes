@@ -2,12 +2,14 @@
 
 session_start();
 
-
-
 if(!isset($_SESSION['id'])){
     header("Location: ../../index.html");
 }
 
+$nombre = $_SESSION['nombre'];
+$ap_paterno = $_SESSION['ap_paterno'];
+
+$nombre_completo = $nombre . " " . $ap_paterno;
 ?>
 
 <!doctype html>
@@ -38,7 +40,7 @@ if(!isset($_SESSION['id'])){
         <!-- place navbar here -->
     </header>
     <main class="container full-height d-flex flex-column justify-content-center">
-        <h1 class="text-secondary-emphasis text-center mb-5 pt-5">Bienvenido a tu cajero Luis Villafaña</h1>
+        <h1 class="text-secondary-emphasis text-center mb-5 pt-5">Bienvenido a tu cajero <?= $nombre_completo; ?></h1>
         <div class="row flex-grow-1">
             <div class="col-6 align-bottom-right">
                 <a href="../saldo/index.php">
