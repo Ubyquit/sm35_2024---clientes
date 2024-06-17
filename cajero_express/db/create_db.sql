@@ -9,6 +9,7 @@ CREATE TABLE tb_clientes(
     ap_materno VARCHAR(25),
 );
 
+-- NUEVA TABLA
 CREATE TABLE tb_log_clientes (
     id_log_cliente INT PRIMARY KEY AUTO_INCREMENT,
     accion VARCHAR(10),
@@ -37,7 +38,6 @@ VALUES
             NEW.ap_materno
         )
     );
-
 END;
 
 / / DELIMITER / / 
@@ -83,7 +83,7 @@ VALUES
     );
     END;
 //
-
+---------------------------
 
 / / CREATE TABLE tb_tarjetas(
     id_tarjeta INT PRIMARY KEY AUTO_INCREMENT,
