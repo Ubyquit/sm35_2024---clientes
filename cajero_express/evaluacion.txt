@@ -1,0 +1,4 @@
+- Todas las querys, deben ser procedimientos almanacenados. (30)
+- Trigger (clientes, tarjetas, tipo_movimientos, login, logout, retiro, consulta). (30)
+- Login debe funcional. (20)
+- Logout debe funcional. (20)
