@@ -1,28 +1,38 @@
 <?php
-// IF si es GET o es POST
+session_start();
 
-// IF si es GET
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // IF si el monto es mayor a 0
-    if ($_GET['monto'] > 0) {
-        // Mostrar el monto
-        echo '<h1>Retirar $' . $_GET['monto'] . '</h1>';
+include "../../connection/conn.php";
+
+//print_r($_POST);
+
+if (isset($_POST['monto']) && isset($_SESSION['id'])) {
+
+    $monto = $_POST['monto'];
+    $id_tarjeta = $_SESSION['id'];
+
+    $sql = "SELECT saldo FROM tb_tarjetas WHERE id_tarjeta = '$id_tarjeta'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $saldo_actual = $row['saldo'];
+        echo $saldo_actual;
+
+        if ($saldo_actual >= $monto) {
+            $saldo_nuevo = $saldo_actual - $monto;
+
+            $sql_update = "UPDATE tb_tarjetas SET saldo = '$saldo_nuevo' WHERE id_tarjeta = '$id_tarjeta'";
+            if ($conn->query($sql_update) === true) {
+                $_SESSION['saldo'] = $saldo_nuevo;
+                header("Location: ../bienvenida/index.php");
+            } else {
+                header("Location: ../bienvenida/index.php");
+            }
+        } else {
+            header("Location: ../bienvenida/index.php");
+        }
     } else {
-        // Mostrar mensaje de error
-        echo '<h1>El monto no es válido</h1>';
+        header("Location: ../bienvenida/index.php");
     }
 } else {
-    // IF si es POST
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // IF si el monto es mayor a 0
-        if ($_POST['monto'] > 0) {
-            // Mostrar el monto
-            echo '<h1>Retirar $' . $_POST['monto'] . '</h1>';
-        } else {
-            // Mostrar mensaje de error
-            echo '<h1>El monto no es válido</h1>';
-        }
-    }
+    header("Location: ../../index.html");
 }
-
-?>
